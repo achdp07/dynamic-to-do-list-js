@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTasks = localStorage.getItem('loadTasks');
     const taskArray = JSON.parse(savedTasks);
 
+
     //First part
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
@@ -14,6 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (taskText === "") {
             alert('Please enter a task.');
             return;
+        }
+
+        let tasks = [];
+        const savedTasks = localStorage.getItem('loadTasks');
+        if (savedTasks) {
+            loadTasks = JSON.parse(savedTasks);
+            tasks.push(taskText); // Add the new task
+            localStorage.setItem('tasks', JSON.stringify(loadTasks)); // Save updated list
         }
 
         // Create <li> element and set its text
