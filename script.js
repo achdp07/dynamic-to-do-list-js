@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create remove button
         const RemoveBtn = document.createElement('button');
-        RemoveBtn.textContent = 'Remove';
-        RemoveBtn.className = 'Remove-btn';
+        RemoveBtn.textContent = "Remove";
+        RemoveBtn.className = 'remove-btn';
 
         // Set up remove functionality
         RemoveBtn.onclick = () => {
@@ -34,4 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         addButton.addEventListener('click', addTask);
+            if (event.key === 'Enter') {
+                addTask();
+            }
+        
+        addTask();// invokes it once when the page is ready
     });
