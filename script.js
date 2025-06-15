@@ -14,14 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create <li> element and set its text
 
-        classList.add;
         const li = document.createElement('li');
         li.textContent = taskText;
 
         // Create remove button
         const RemoveBtn = document.createElement('button');
         RemoveBtn.textContent = "Remove";
-        RemoveBtn.className = 'remove-btn';
+        RemoveBtn.classList.add('remove-btn');
 
         // Set up remove functionality
         RemoveBtn.onclick = () => {
@@ -38,4 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addButton.addEventListener('click', addTask);
 
+    // Add task on Enter key press
+    taskInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            addTask();
+        };
     });
+});
