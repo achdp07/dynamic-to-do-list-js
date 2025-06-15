@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
-    const tasklist = document.getElementById('task-list');
+    const taskList = document.getElementById('task-list');
 
     function addTask(event) {
         const taskText = taskInput.value.trim();
@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
             RemoveBtn.className = 'Remove-btn';
 
             RemoveBtn.onclick = () => {
-                tasklist.removeChild(li);
+                taskList.removeChild(li);
             };
 
             li.appendChild(RemoveBtn);
-            tasklist.appendChild(li);
+            taskList.appendChild(li);
 
             taskInput.value = '';
         }
