@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please enter a task.');
             return;
         }
+
         // Create <li> element and set its text
+
+        classList.add;
         const li = document.createElement('li');
         li.textContent = taskText;
-        classList.add;
 
         // Create remove button
         const RemoveBtn = document.createElement('button');
@@ -32,12 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Clear input
         taskInput.value = '';
-        };
+    };
 
-        addButton.addEventListener('click', addTask);
-            if (event.key === 'Enter') {
-                addTask();
-            }
-        
-        addTask();// invokes it once when the page is ready
+    addButton.addEventListener('click', addTask);
+
     });
