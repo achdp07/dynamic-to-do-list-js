@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //task 2
+    const savedTasks = localStorage.getItem('tasks');
+    const taskArray = JSON.parse(savedTasks);
 
+    //First part
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
@@ -44,3 +48,4 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     });
 });
+
