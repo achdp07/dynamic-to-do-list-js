@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     //task 2
-    const savedTasks = localStorage.getItem('tasks');
+    const savedTasks = localStorage.getItem('loadTasks');
     const taskArray = JSON.parse(savedTasks);
 
     //First part
