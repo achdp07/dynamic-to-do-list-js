@@ -10,24 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if (taskText === "") {
             alert('Please enter a task.');
             return;
-        } else {
-            const li = document.createElement('li');
-            li.textContent = taskText;
-
-            const RemoveBtn = document.createElement('button');
-            RemoveBtn.textContent = 'Remove';
-            RemoveBtn.className = 'Remove-btn';
-
-            RemoveBtn.onclick = () => {
-                taskList.removeChild(li);
-            };
-
-            li.appendChild(RemoveBtn);
-            taskList.appendChild(li);
-
-            taskInput.value = '';
         }
-    };
+        // Create <li> element and set its text
+        const li = document.createElement('li');
+        li.textContent = taskText;
 
-    addButton.addEventListener('click', addTask);
+        // Create remove button
+        const RemoveBtn = document.createElement('button');
+        RemoveBtn.textContent = 'Remove';
+        RemoveBtn.className = 'Remove-btn';
+
+        // Set up remove functionality
+        RemoveBtn.onclick = () => {
+            taskList.removeChild(li);
+        };
+
+        // Append remove button to li, and li to task list
+        li.appendChild(RemoveBtn);
+        taskList.appendChild(li);
+
+        // Clear input
+        taskInput.value = '';
+        };
+
+        addButton.addEventListener('click', addTask);
     });
